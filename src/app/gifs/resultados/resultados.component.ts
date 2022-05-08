@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { GifsService } from 'src/app/gifs/services/gifs.service';
 
 @Component({
   selector: 'app-resultados',
@@ -6,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class ResultadosComponent implements OnInit {
+export class ResultadosComponent  {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  /* SE CREA LA PROPIEDAD DE LA CLASE MEDIANTE UN GET DEBIDO A QUE FACILITA EL ACCESO EN LA PARTE DEL HTML*/
+  get resultados(){
+    return this.gifsService.resultados;
   }
+ 
+
+
+
+
+  /* SE INJECTA LA DEPENDENCIA PARA RECIBIR EL ARRAY DE LA API */
+  constructor(private gifsService: GifsService) { }
+
 
 }

@@ -1,1 +1,20 @@
-<p>resultados works!</p>
+
+<div class="row">
+    <div *ngFor="let item of resultados" class="card "
+         class="col-md-4 col-sm-6 animate__animated animate__zoomIn" >
+         <div class="card">
+            <img src="{{item.images.downsized_medium.url}}" 
+                alt="" 
+                class="card-img-top">
+         </div>
+        <div class = "card-body">
+            <p class="card-text">
+                {{item.title}}
+            </p>
+
+        </div>
+
+          
+    </div>
+
+</div>

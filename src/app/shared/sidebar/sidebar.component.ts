@@ -9,12 +9,22 @@ import { GifsService } from 'src/app/gifs/services/gifs.service';
 export class SidebarComponent {
 
   get historial(){
-    return this.GifsService.historial
+    return this.gifsService.historial
   }
 
   
 /* INJECCIÓN DE DEPENDENCIAS PONE DISPONIBLE EL RECURSO DEL SERVICIO */
 
-  constructor( private GifsService: GifsService) { }
+  constructor( private gifsService: GifsService) { }
+  
+
+  buscar(termino: string){
+
+    this.gifsService.buscarGifs(termino);
+
+    
+    console.log(termino)
+
+  }
 
 }

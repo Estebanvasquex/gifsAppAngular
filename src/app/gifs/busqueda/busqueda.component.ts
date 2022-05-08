@@ -15,7 +15,7 @@ export class BusquedaComponent  {
   @ViewChild('txtBuscar') txtBuscar!: ElementRef<HTMLInputElement>;
   
   /* INJECCIÓN DE DEPENDENCIAS PARA TENER DISPONIBLE EL SERVICIO */
-  constructor(private gifService: GifsService) {}
+  constructor(private gifsService: GifsService) {}
 
   
   /* LLAMO A LA FUNCIÓN buscarGifs del servicio e INSERTO EL VALOR AL ARRAY CUANDO SE PRESENTAN CAMBIOS EN EL INPUT */
@@ -23,7 +23,7 @@ export class BusquedaComponent  {
    
  const valor=this.txtBuscar.nativeElement.value;
 
- this.gifService.buscarGifs(valor)
+ this.gifsService.buscarGifs(valor)
  this.txtBuscar.nativeElement.value = '';
 
 
